@@ -19,7 +19,7 @@ app = Flask(__name__)
 CORS(app)  # allow the React (TypeScript) frontend to call this API
 
 # ---- MongoDB connection ----
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://127.0.0.1:27017/")
 db = client["school_db"]
 students = db["students"]
 
