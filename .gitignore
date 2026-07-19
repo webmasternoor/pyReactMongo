@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Flask
+instance/
+.env
+
+# Node
+node_modules/
+dist/
+
+# Vite
+.vite/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+pyReactMongo.pem
