@@ -28,18 +28,18 @@ jobs:
                 git fetch origin
                 git reset --hard origin/main
 
-                # Backend
-                cd backend
-
-                python3 -m venv .venv
-                source .venv/bin/activate
-                pip install -r requirements.txt
-
-                # Frontend
-                cd ../frontend
+                cd frontend
 
                 npm ci
                 npm run build
+
+                sudo rm -rf /var/www/pyreactmongo/*
+                sudo cp -r dist/* /var/www/pyreactmongo/
+
+                cd ../backend
+
+                source .venv/bin/activate
+                pip install -r requirements.txt
 
                 sudo systemctl restart pyreactmongo
                 sudo systemctl reload nginx

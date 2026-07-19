@@ -1,6 +1,6 @@
 import type { Student, StudentInput } from "./types/types";
 
-const BASE_URL = "http://localhost:5000/api/students";
+const BASE_URL = "http://127.0.0.1:5000/api/students";
 
 async function handleResponse<T>(res: Response): Promise<T> {
   const body = await res.json();
