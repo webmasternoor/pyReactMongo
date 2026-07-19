@@ -18,8 +18,8 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
 
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          host: ${{ secrets.EC2_HOST }} 
+          username: ${{ secrets.ubuntu }}
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
