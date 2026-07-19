@@ -25,14 +25,21 @@ jobs:
             script: |
                 cd /home/ubuntu/pyReactMongo
 
-                git pull origin main
+                git fetch origin
+                git reset --hard origin/main
 
-                npm install
+                # Backend
+                cd backend
 
+                python3 -m venv .venv
+                source .venv/bin/activate
+                pip install -r requirements.txt
+
+                # Frontend
+                cd ../frontend
+
+                npm ci
                 npm run build
 
-                pip3 install -r requirements.txt
-
                 sudo systemctl restart pyreactmongo
-
                 sudo systemctl reload nginx
